@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
+
+enum ImageManager {
+    enum UserConfig: String {
+        case UserConfigArt
+        
+        var render: Image {
+            return Image(self.rawValue)
+        }
+    }
+}
