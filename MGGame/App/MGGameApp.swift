@@ -9,9 +9,23 @@ import SwiftUI
 
 @main
 struct MGGameApp: App {
+    @State private var splashScreenIsActive: Bool = true
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group {
+                if splashScreenIsActive {
+                    SplashScreenView()
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                                self.splashScreenIsActive = false
+                            }
+                        }
+                } else {
+                    ContentView()
+                }
+            }
+            .animation(.default, value: splashScreenIsActive)
         }
     }
 }
