@@ -7,8 +7,19 @@
 
 import Foundation
 
-struct RoomModel: Codable {
+struct RoomModel: Codable, Identifiable {
     var id: UUID
     var name: String
-    var hostID: String
+    var hostID: UUID
+    var players: [PlayerModel]?
+}
+
+struct RoomJoinPlayer: Codable {
+    var roomId: UUID
+    var player: PlayerModel
+}
+
+struct RoomQuitPlayer: Codable {
+    var roomId: UUID
+    var playerId: UUID
 }

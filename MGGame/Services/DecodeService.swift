@@ -7,10 +7,6 @@
 
 import Foundation
 
-enum MessageType: String {
-    case newRoom
-}
-
 struct MessageDecode {
     var type: String
     var data: [String: Any]
