@@ -16,8 +16,15 @@
 		2273AAA22B1BE7270023D79F /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273AAA12B1BE7270023D79F /* GameViewModel.swift */; };
 		2273AAA42B1BF33F0023D79F /* DecodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273AAA32B1BF33F0023D79F /* DecodeService.swift */; };
 		2273AAA62B1BF44F0023D79F /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273AAA52B1BF44F0023D79F /* RoomModel.swift */; };
+		802169762B1EA55800BF9F5F /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802169752B1EA55800BF9F5F /* SplashScreenView.swift */; };
 		80286D5D2B1EA06A00772A9C /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80286D5C2B1EA06A00772A9C /* ImageManager.swift */; };
 		80286D602B1EA07A00772A9C /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80286D5F2B1EA07A00772A9C /* ColorManager.swift */; };
+		80A2F8052B1FC4AC00936339 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2F8042B1FC4AC00936339 /* FontManager.swift */; };
+		80A2F8082B1FC56900936339 /* Nippo-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80A2F8072B1FC56900936339 /* Nippo-Bold.otf */; };
+		80A2F80D2B1FC8B900936339 /* Nippo-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80A2F8092B1FC57400936339 /* Nippo-Medium.otf */; };
+		80A2F80E2B1FC8BD00936339 /* Nippo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80A2F80A2B1FC57B00936339 /* Nippo-Regular.otf */; };
+		80A2F80F2B1FC8C000936339 /* Nippo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80A2F80B2B1FC58000936339 /* Nippo-Light.otf */; };
+		80A2F8102B1FC8C300936339 /* Nippo-Extralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80A2F80C2B1FC58700936339 /* Nippo-Extralight.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +40,15 @@
 		2273AAA12B1BE7270023D79F /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		2273AAA32B1BF33F0023D79F /* DecodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeService.swift; sourceTree = "<group>"; };
 		2273AAA52B1BF44F0023D79F /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
+		802169752B1EA55800BF9F5F /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		80286D5C2B1EA06A00772A9C /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		80286D5F2B1EA07A00772A9C /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		80A2F8042B1FC4AC00936339 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		80A2F8072B1FC56900936339 /* Nippo-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nippo-Bold.otf"; sourceTree = "<group>"; };
+		80A2F8092B1FC57400936339 /* Nippo-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nippo-Medium.otf"; sourceTree = "<group>"; };
+		80A2F80A2B1FC57B00936339 /* Nippo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nippo-Regular.otf"; sourceTree = "<group>"; };
+		80A2F80B2B1FC58000936339 /* Nippo-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nippo-Light.otf"; sourceTree = "<group>"; };
+		80A2F80C2B1FC58700936339 /* Nippo-Extralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nippo-Extralight.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +133,7 @@
 			children = (
 				2273AA8C2B1BE1A10023D79F /* Assets.xcassets */,
 				80286D5E2B1EA07100772A9C /* Colors */,
+				80A2F8032B1FC49C00936339 /* Fonts */,
 				80286D5B2B1EA04A00772A9C /* Images */,
 			);
 			path = Resources;
@@ -127,6 +142,7 @@
 		2273AA9F2B1BE33A0023D79F /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				80286D612B1EA22300772A9C /* SplashScreen */,
 				2273AAA12B1BE7270023D79F /* GameViewModel.swift */,
 			);
 			path = Features;
@@ -146,6 +162,35 @@
 				80286D5F2B1EA07A00772A9C /* ColorManager.swift */,
 			);
 			path = Colors;
+			sourceTree = "<group>";
+		};
+		80286D612B1EA22300772A9C /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				802169752B1EA55800BF9F5F /* SplashScreenView.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		80A2F8032B1FC49C00936339 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				80A2F8042B1FC4AC00936339 /* FontManager.swift */,
+				80A2F8062B1FC54300936339 /* Nippo */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		80A2F8062B1FC54300936339 /* Nippo */ = {
+			isa = PBXGroup;
+			children = (
+				80A2F8072B1FC56900936339 /* Nippo-Bold.otf */,
+				80A2F8092B1FC57400936339 /* Nippo-Medium.otf */,
+				80A2F80A2B1FC57B00936339 /* Nippo-Regular.otf */,
+				80A2F80B2B1FC58000936339 /* Nippo-Light.otf */,
+				80A2F80C2B1FC58700936339 /* Nippo-Extralight.otf */,
+			);
+			path = Nippo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,8 +251,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80A2F8102B1FC8C300936339 /* Nippo-Extralight.otf in Resources */,
 				2273AA912B1BE1A10023D79F /* Preview Assets.xcassets in Resources */,
+				80A2F80F2B1FC8C000936339 /* Nippo-Light.otf in Resources */,
 				2273AA8D2B1BE1A10023D79F /* Assets.xcassets in Resources */,
+				80A2F8082B1FC56900936339 /* Nippo-Bold.otf in Resources */,
+				80A2F80D2B1FC8B900936339 /* Nippo-Medium.otf in Resources */,
+				80A2F80E2B1FC8BD00936339 /* Nippo-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +274,9 @@
 				80286D5D2B1EA06A00772A9C /* ImageManager.swift in Sources */,
 				2273AA892B1BE1A00023D79F /* MGGameApp.swift in Sources */,
 				2273AAA22B1BE7270023D79F /* GameViewModel.swift in Sources */,
+				80A2F8052B1FC4AC00936339 /* FontManager.swift in Sources */,
 				80286D602B1EA07A00772A9C /* ColorManager.swift in Sources */,
+				802169762B1EA55800BF9F5F /* SplashScreenView.swift in Sources */,
 				2273AA9A2B1BE2300023D79F /* NamedColor.swift in Sources */,
 				2273AAA42B1BF33F0023D79F /* DecodeService.swift in Sources */,
 			);

@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Nippo-Bold.otf</string>
+		<string>Nippo-Medium.otf</string>
+		<string>Nippo-Regular.otf</string>
+		<string>Nippo-Light.otf</string>
+		<string>Nippo-Extralight.otf</string>
+	</array>
 	<key>NSBonjourServices</key>
 	<array>
 		<string>_mg-game._tcp</string>

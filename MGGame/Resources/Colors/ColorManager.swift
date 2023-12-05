@@ -17,6 +17,17 @@ enum ColorManager {
         case mediumBlue = "color-5"
         case darkBlue = "color-6"
         
+        
+        static var allColors: [Color] {
+            return [
+                Colors.yellow.value,
+                Colors.pink.value,
+                Colors.lightBlue.value,
+                Colors.mediumBlue.value,
+                Colors.darkBlue.value
+            ]
+        }
+        
         var value: Color {
             return Color(self.rawValue)
         }
