@@ -8,28 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var session = GameConnection()
+    @StateObject var viewModel = GameViewModel(userID: .init(), nickName: "Mauricio")
     
     var body: some View {
-            VStack(alignment: .leading) {
-                Text("Connected Devices:")
-                Text(String(describing: session.connectedPeers.map(\.displayName)))
-
-                Divider()
-
-                HStack {
-                    ForEach(NamedColor.allCases, id: \.self) { color in
-                        Button(color.rawValue) {
-                            session.send(color: color)
-                        }
-                        .padding()
-                    }
-                }
-                Spacer()
-            }
-            .padding()
-            .background((session.currentColor.map(\.color) ?? .clear).ignoresSafeArea())
-        }
+        TestView(gameViewModel: viewModel)
+    }
 }
 
 #Preview {

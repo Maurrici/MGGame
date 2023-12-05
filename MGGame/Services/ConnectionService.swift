@@ -16,9 +16,8 @@ class GameConnection: NSObject, ObservableObject {
     private let session: MCSession
     private let log = Logger()
     
-    var handler: GameViewModel? = nil
     @Published var connectedPeers: [MCPeerID] = []
-    @Published var currentColor: NamedColor? = nil
+    var handler: GameViewModel? = nil
     
     override init() {
         session = MCSession(peer: myPeerId, securityIdentity: nil, encryptionPreference: .none)
@@ -40,13 +39,26 @@ class GameConnection: NSObject, ObservableObject {
         serviceBrowser.stopBrowsingForPeers()
     }
     
-    func send(color: NamedColor) {
-        log.info("sendColor: \(String(describing: color)) to \(self.session.connectedPeers.count) peers")
-        self.currentColor = color
+    func send<T: Codable>(message: GenericMessage<T>) {
+        log.info("sendRoom to \(self.session.connectedPeers.count) peers")
         
         if !session.connectedPeers.isEmpty {
             do{
-                try session.send(color.rawValue.data(using: .utf8)!, toPeers: session.connectedPeers, with: .reliable)
+                let data = try JSONEncoder().encode(message)
+                try session.send(data, toPeers: session.connectedPeers, with: .reliable)
+            } catch {
+                log.error("Error for sending: \(String(describing: error))")
+            }
+        }
+    }
+    
+    func send<T: Codable>(message: GenericMessage<T>, peerID: MCPeerID) {
+        log.info("sendRoom to \(peerID)")
+        
+        if !session.connectedPeers.isEmpty {
+            do{
+                let data = try JSONEncoder().encode(message)
+                try session.send(data, toPeers: [peerID], with: .reliable)
             } catch {
                 log.error("Error for sending: \(String(describing: error))")
             }
@@ -85,18 +97,38 @@ extension GameConnection: MCSessionDelegate {
         log.info("peer \(peerID) didChangeState: \(state.rawValue)")
         DispatchQueue.main.async {
             self.connectedPeers = session.connectedPeers
+            self.handler?.offerRoom()
         }
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         log.info("didReceive bytes \(data.count) bytes")
-        if let string = String(data: data, encoding: .utf8), let color = NamedColor(rawValue: string) {
-            log.info("didReceive color \(string)")
-            DispatchQueue.main.async {
-                self.currentColor = color
+        let message = DecodeService.decodeGenericResponse(jsonData: data)
+        
+        if let type = MessageType(rawValue: message?.type ?? "") {
+            switch(type) {
+            case .newRoom:
+                if let roomData = try? JSONSerialization.data(withJSONObject: message?.data as Any),
+                   let room = try? JSONDecoder().decode(RoomModel.self, from: roomData) {
+                    DispatchQueue.main.async {
+                        self.handler?.getPublicRooms(roomPublic: room)
+                    }
+                }
+            case .joinRoom:
+                if let roomJoinPLayerData = try? JSONSerialization.data(withJSONObject: message?.data as Any),
+                   let roomJoinPLayer = try? JSONDecoder().decode(RoomJoinPlayer.self, from: roomJoinPLayerData) {
+                    DispatchQueue.main.async {
+                        self.handler?.newPlayerInRoom(roomJoinPlayer: roomJoinPLayer)
+                    }
+                }
+            case .quitRoom:
+                if let roomQuitPLayerData = try? JSONSerialization.data(withJSONObject: message?.data as Any),
+                   let roomQuitPLayer = try? JSONDecoder().decode(RoomQuitPlayer.self, from: roomQuitPLayerData) {
+                    DispatchQueue.main.async {
+                        self.handler?.removePLayerInRoom(roomQuitPlayer: roomQuitPLayer)
+                    }
+                }
             }
-        } else {
-            log.info("didReceive invalid value \(data.count) bytes")
         }
     }
     
