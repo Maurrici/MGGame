@@ -14,29 +14,60 @@ struct TestView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Salas:")
-            List {
-                ForEach(gameViewModel.rooms) { room in
-                    Text("\(room.name)")
-                        .onTapGesture {
-                            gameViewModel.joinRoom(room: room)
+            Text("Pixelar")
+                .font(.nippoRegular(size: 64))
+                .foregroundColor(.black)
+            
+            Text("Available rooms:")
+                .font(.nippoRegular(size: 24))
+                .foregroundColor(.black)
+            
+            if gameViewModel.rooms.isEmpty {
+                Rectangle()
+                    .foregroundColor(ColorManager.Colors.lightBlue.value)
+            } else {
+                Rectangle()
+                    .foregroundColor(ColorManager.Colors.lightBlue.value)
+                    .overlay {
+                        
+                        
+                        ScrollView(.vertical) {
+                            VStack {
+                                ForEach(gameViewModel.rooms) { room in
+                                    
+                                    .padding()
+                                    .background(ColorManager.Colors.pink.value)
+                                    .onTapGesture {
+                                        gameViewModel.joinRoom(room: room)
+                                    }
+                                }
+                                .padding(.top, 8)
+                                .padding(.horizontal)
+                                Spacer()
+                            }
                         }
-                }
+                    }
             }
+            Spacer()
             
             Divider()
             
             Button {
                 gameViewModel.createRoom(name: "Sala de teste 123")
             } label: {
-                HStack(alignment: .center) {
-                    Text("Cria sala")
+                HStack() {
+                    Spacer()
+                    Text("Create Room")
+                        .font(.nippoRegular(size: 48))
+                        .foregroundColor(.black)
+                    Spacer()
                 }
+                .background(ColorManager.Colors.pink.value)
             }
-            .padding()
-            Spacer()
+            .padding(.horizontal)
         }
         .padding()
+        .background(ColorManager.Colors.white.value)
         .fullScreenCover(isPresented: $gameViewModel.isInRoom) {
             VStack {
                 Text(gameViewModel.myRoom?.name ?? "")
