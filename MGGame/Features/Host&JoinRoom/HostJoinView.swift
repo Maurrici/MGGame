@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TestView: View {
+struct HostJoinView: View {
     @ObservedObject var gameViewModel: GameViewModel
     
     @State var isInRoom: Bool = false
@@ -29,17 +29,13 @@ struct TestView: View {
                 Rectangle()
                     .foregroundColor(ColorManager.Colors.lightBlue.value)
                     .overlay {
-                        
-                        
                         ScrollView(.vertical) {
                             VStack {
                                 ForEach(gameViewModel.rooms) { room in
-                                    
-                                    .padding()
-                                    .background(ColorManager.Colors.pink.value)
-                                    .onTapGesture {
-                                        gameViewModel.joinRoom(room: room)
-                                    }
+                                    RoomCardView(room: room)
+                                        .onTapGesture {
+                                            gameViewModel.joinRoom(room: room)
+                                        }
                                 }
                                 .padding(.top, 8)
                                 .padding(.horizontal)
@@ -94,5 +90,5 @@ struct TestView: View {
 }
 
 #Preview {
-    TestView(gameViewModel: GameViewModel(userID: .init(), nickName: "Maurrici"))
+    HostJoinView(gameViewModel: GameViewModel(userID: .init(), nickName: "Maurrici"))
 }

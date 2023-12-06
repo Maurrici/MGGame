@@ -25,5 +25,7 @@ struct RoomCardView: View {
             
             Text("3/7")
         }
+        .padding()
+        .background(ColorManager.Colors.pink.value)
     }
 }

@@ -15,7 +15,7 @@
 		2273AAA42B1BF33F0023D79F /* DecodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273AAA32B1BF33F0023D79F /* DecodeService.swift */; };
 		2273AAA62B1BF44F0023D79F /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273AAA52B1BF44F0023D79F /* RoomModel.swift */; };
 		2273AAA82B1BF7100023D79F /* GenericMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273AAA72B1BF7100023D79F /* GenericMessage.swift */; };
-		2273AAAA2B1D11E20023D79F /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273AAA92B1D11E20023D79F /* TestView.swift */; };
+		2273AAAA2B1D11E20023D79F /* HostJoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273AAA92B1D11E20023D79F /* HostJoinView.swift */; };
 		2273AAAC2B1D14750023D79F /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273AAAB2B1D14750023D79F /* PlayerModel.swift */; };
 		802169762B1EA55800BF9F5F /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802169752B1EA55800BF9F5F /* SplashScreenView.swift */; };
 		80286D5D2B1EA06A00772A9C /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80286D5C2B1EA06A00772A9C /* ImageManager.swift */; };
@@ -42,7 +42,7 @@
 		2273AAA32B1BF33F0023D79F /* DecodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeService.swift; sourceTree = "<group>"; };
 		2273AAA52B1BF44F0023D79F /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		2273AAA72B1BF7100023D79F /* GenericMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMessage.swift; sourceTree = "<group>"; };
-		2273AAA92B1D11E20023D79F /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		2273AAA92B1D11E20023D79F /* HostJoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostJoinView.swift; sourceTree = "<group>"; };
 		2273AAAB2B1D14750023D79F /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		802169752B1EA55800BF9F5F /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		80286D5C2B1EA06A00772A9C /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
@@ -152,7 +152,6 @@
 			children = (
 				80A2F8152B1FE9F200936339 /* Host&JoinRoom */,
 				80286D612B1EA22300772A9C /* SplashScreen */,
-				2273AAA92B1D11E20023D79F /* TestView.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -205,6 +204,7 @@
 		80A2F8152B1FE9F200936339 /* Host&JoinRoom */ = {
 			isa = PBXGroup;
 			children = (
+				2273AAA92B1D11E20023D79F /* HostJoinView.swift */,
 				80A2F8162B1FF3B700936339 /* Components */,
 			);
 			path = "Host&JoinRoom";
@@ -305,7 +305,7 @@
 				80A2F8052B1FC4AC00936339 /* FontManager.swift in Sources */,
 				80286D602B1EA07A00772A9C /* ColorManager.swift in Sources */,
 				802169762B1EA55800BF9F5F /* SplashScreenView.swift in Sources */,
-				2273AAAA2B1D11E20023D79F /* TestView.swift in Sources */,
+				2273AAAA2B1D11E20023D79F /* HostJoinView.swift in Sources */,
 				2273AAA42B1BF33F0023D79F /* DecodeService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
