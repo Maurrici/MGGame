@@ -65,26 +65,7 @@ struct HostJoinView: View {
         .padding()
         .background(ColorManager.Colors.white.value)
         .fullScreenCover(isPresented: $gameViewModel.isInRoom) {
-            VStack {
-                Text(gameViewModel.myRoom?.name ?? "")
-                
-                List {
-                    ForEach(gameViewModel.myRoom?.players ?? []) { player in
-                        Text("\(player.nickName) \(player.id.uuidString)")
-                    }
-                }
-                
-                Divider()
-                
-                Button {
-                    gameViewModel.quitRoom()
-                } label: {
-                    Text("Sair")
-                        .foregroundColor(.red)
-                }
-                
-                Spacer()
-            }
+            WaitingRoomView(gameViewModel: gameViewModel)
         }
     }
 }

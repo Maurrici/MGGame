@@ -12,6 +12,7 @@ struct RoomModel: Codable, Identifiable {
     var name: String
     var hostID: UUID
     var players: [PlayerModel]?
+    var updateRoom: Bool = false
 }
 
 struct RoomJoinPlayer: Codable {
