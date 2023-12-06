@@ -82,8 +82,8 @@ class GameViewModel: ObservableObject {
     func quitRoom() {
         if let roomId = myRoom?.id {
             myRoom = nil
-            let roomQuitPlayer = RoomQuitPlayer(roomId: roomId, playerId: userID)
-            let message = GenericMessage(type: MessageType.quitRoom.rawValue, data: roomQuitPlayer)
+            var roomQuitPlayer = RoomQuitPlayer(roomId: roomId, playerId: userID)
+            var message = GenericMessage(type: MessageType.quitRoom.rawValue, data: roomQuitPlayer)
             
             session.send(message: message)
         }
