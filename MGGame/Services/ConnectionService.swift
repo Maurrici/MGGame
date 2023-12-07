@@ -10,7 +10,7 @@ import os
 
 class GameConnection: NSObject, ObservableObject {
     private let serviceType = "mg-game"
-    private let myPeerId = MCPeerID(displayName: UserDefaults.standard.string(forKey: "userId") ?? "")
+    private let myPeerId = MCPeerID(displayName: UserDefaults.standard.string(forKey: "userId") ?? UIDevice.current.name)
     private let serviceAdvertiser: MCNearbyServiceAdvertiser
     private let serviceBrowser: MCNearbyServiceBrowser
     private let session: MCSession
