@@ -8,9 +8,7 @@
 import Foundation
 
 class GameViewModel: ObservableObject {
-    var userID: UUID
-    @Published var nickName: String
-    
+    @Published var player: PlayerModel
     @Published var rooms: [RoomModel] = []
     @Published var myRoom: RoomModel? {
         didSet {
@@ -22,9 +20,8 @@ class GameViewModel: ObservableObject {
     
     var session = GameConnection()
     
-    init(userID: UUID,nickName: String) {
-        self.userID = userID
-        self.nickName = nickName
+    init(userID: UUID, nickName: String) {
+        self.player = PlayerModel(id: userID, nickName: nickName, ready: false)
         self.session.handler = self
     }
     
@@ -36,8 +33,30 @@ class GameViewModel: ObservableObject {
         }
     }
     
+    func setPlayerStatus() {
+        self.player.ready.toggle()
+        session.send(message: GenericMessage(type: MessageType.playerReady.rawValue, data: PlayerStatusModel(userId: self.player.id, ready: self.player.ready)))
+        self.myRoom?.players = self.myRoom?.players?.map { remotePlayer in
+            var updatePlayer = remotePlayer
+            if updatePlayer.id == self.player.id {
+                updatePlayer.ready = self.player.ready
+            }
+            return updatePlayer
+        }
+    }
+    
+    func getPlayerStatus(playerStatusModel: PlayerStatusModel) {
+        self.myRoom?.players = self.myRoom?.players?.map { remotePlayer in
+            var updatePlayer = remotePlayer
+            if updatePlayer.id == playerStatusModel.userId {
+                updatePlayer.ready = playerStatusModel.ready
+            }
+            return updatePlayer
+        }
+    }
+    
     func createRoom(name: String) {
-        let room = RoomModel(id: .init(), name: name, hostID: userID, players: [PlayerModel(id: userID, nickName: nickName)])
+        let room = RoomModel(id: .init(), name: name, hostID: player.id, players: [player])
         myRoom = room
         
         let message = GenericMessage(type: MessageType.newRoom.rawValue, data: myRoom)
@@ -46,9 +65,9 @@ class GameViewModel: ObservableObject {
     
     func joinRoom(room: RoomModel) {
         myRoom = room
-        myRoom?.players?.append(PlayerModel(id: userID, nickName: nickName))
+        myRoom?.players?.append(player)
         
-        let message = GenericMessage(type: MessageType.joinRoom.rawValue, data: RoomJoinPlayer(roomId: room.id, player: PlayerModel(id: userID, nickName: nickName)))
+        let message = GenericMessage(type: MessageType.joinRoom.rawValue, data: RoomJoinPlayer(roomId: room.id, player: player))
         session.send(message: message)
     }
     
@@ -82,8 +101,8 @@ class GameViewModel: ObservableObject {
     func quitRoom() {
         if let roomId = myRoom?.id {
             myRoom = nil
-            var roomQuitPlayer = RoomQuitPlayer(roomId: roomId, playerId: userID)
-            var message = GenericMessage(type: MessageType.quitRoom.rawValue, data: roomQuitPlayer)
+            let roomQuitPlayer = RoomQuitPlayer(roomId: roomId, playerId: player.id)
+            let message = GenericMessage(type: MessageType.quitRoom.rawValue, data: roomQuitPlayer)
             
             session.send(message: message)
         }

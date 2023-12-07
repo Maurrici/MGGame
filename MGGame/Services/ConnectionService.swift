@@ -128,6 +128,13 @@ extension GameConnection: MCSessionDelegate {
                         self.handler?.removePLayerInRoom(roomQuitPlayer: roomQuitPLayer)
                     }
                 }
+            case .playerReady:
+                if let roomPlayerChangedStatusData = try? JSONSerialization.data(withJSONObject: message?.data as Any),
+                   let roomPlayerChangedStatus = try? JSONDecoder().decode(PlayerStatusModel.self, from: roomPlayerChangedStatusData) {
+                    DispatchQueue.main.async {
+                        self.handler?.getPlayerStatus(playerStatusModel: roomPlayerChangedStatus)
+                    }
+                }
             }
         }
     }

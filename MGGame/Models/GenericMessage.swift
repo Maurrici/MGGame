@@ -16,4 +16,5 @@ enum MessageType: String {
     case newRoom
     case joinRoom
     case quitRoom
+    case playerReady
 }
