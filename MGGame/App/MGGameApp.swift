@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct MGGameApp: App {
     @State private var splashScreenIsActive: Bool = true
+    @StateObject private var appCoordinator = AppCoordinator()
     
     var body: some Scene {
         WindowGroup {
@@ -22,10 +23,12 @@ struct MGGameApp: App {
                             }
                         }
                 } else {
-                    ContentView()
+                    NavigationStack(path: $appCoordinator.path) {
+                        appCoordinator.build()
+                    }
                 }
             }
-            .animation(.default, value: splashScreenIsActive)
+            .animation(.easeInOut, value: splashScreenIsActive)
         }
     }
 }

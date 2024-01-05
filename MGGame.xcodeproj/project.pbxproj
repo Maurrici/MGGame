@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2273AA892B1BE1A00023D79F /* MGGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273AA882B1BE1A00023D79F /* MGGameApp.swift */; };
-		2273AA8B2B1BE1A00023D79F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273AA8A2B1BE1A00023D79F /* ContentView.swift */; };
 		2273AA8D2B1BE1A10023D79F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2273AA8C2B1BE1A10023D79F /* Assets.xcassets */; };
 		2273AA912B1BE1A10023D79F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2273AA902B1BE1A10023D79F /* Preview Assets.xcassets */; };
 		2273AA982B1BE2140023D79F /* ConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273AA972B1BE2140023D79F /* ConnectionService.swift */; };
@@ -34,12 +33,18 @@
 		80A2F8102B1FC8C300936339 /* Nippo-Extralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80A2F80C2B1FC58700936339 /* Nippo-Extralight.otf */; };
 		80A2F8142B1FE43C00936339 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2F8132B1FE43B00936339 /* GameViewModel.swift */; };
 		80A2F8182B1FF3C400936339 /* RoomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2F8172B1FF3C400936339 /* RoomCardView.swift */; };
+		FF59C81E2B4852D300BDB87F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C81D2B4852D300BDB87F /* AppCoordinator.swift */; };
+		FF59C8212B48538800BDB87F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C8202B48538800BDB87F /* Coordinator.swift */; };
+		FF59C8232B48539800BDB87F /* FlowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C8222B48539800BDB87F /* FlowBuilder.swift */; };
+		FF59C8252B4853D500BDB87F /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C8242B4853D500BDB87F /* Route.swift */; };
+		FF59C8272B4854DF00BDB87F /* PlayerConfigRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C8262B4854DF00BDB87F /* PlayerConfigRoute.swift */; };
+		FF59C8292B485B3E00BDB87F /* Host&JoinRoomRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C8282B485B3E00BDB87F /* Host&JoinRoomRoute.swift */; };
+		FF59C82D2B485DB900BDB87F /* KeysService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C82C2B485DB900BDB87F /* KeysService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2273AA852B1BE1A00023D79F /* MGGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MGGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2273AA882B1BE1A00023D79F /* MGGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGGameApp.swift; sourceTree = "<group>"; };
-		2273AA8A2B1BE1A00023D79F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2273AA8C2B1BE1A10023D79F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2273AA8E2B1BE1A10023D79F /* MGGame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MGGame.entitlements; sourceTree = "<group>"; };
 		2273AA902B1BE1A10023D79F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -67,6 +72,13 @@
 		80A2F80C2B1FC58700936339 /* Nippo-Extralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nippo-Extralight.otf"; sourceTree = "<group>"; };
 		80A2F8132B1FE43B00936339 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		80A2F8172B1FF3C400936339 /* RoomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCardView.swift; sourceTree = "<group>"; };
+		FF59C81D2B4852D300BDB87F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		FF59C8202B48538800BDB87F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		FF59C8222B48539800BDB87F /* FlowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowBuilder.swift; sourceTree = "<group>"; };
+		FF59C8242B4853D500BDB87F /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		FF59C8262B4854DF00BDB87F /* PlayerConfigRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerConfigRoute.swift; sourceTree = "<group>"; };
+		FF59C8282B485B3E00BDB87F /* Host&JoinRoomRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Host&JoinRoomRoute.swift"; sourceTree = "<group>"; };
+		FF59C82C2B485DB900BDB87F /* KeysService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,8 @@
 		2273AA872B1BE1A00023D79F /* MGGame */ = {
 			isa = PBXGroup;
 			children = (
+				FF59C82A2B485D9000BDB87F /* Helpers */,
+				FF59C81F2B48537200BDB87F /* Protocols */,
 				2273AAA02B1BE64A0023D79F /* Info.plist */,
 				2273AA9C2B1BE2FB0023D79F /* App */,
 				2273AA9B2B1BE2F00023D79F /* Services */,
@@ -133,7 +147,7 @@
 			children = (
 				2273AA882B1BE1A00023D79F /* MGGameApp.swift */,
 				80A2F8132B1FE43B00936339 /* GameViewModel.swift */,
-				2273AA8A2B1BE1A00023D79F /* ContentView.swift */,
+				FF59C81D2B4852D300BDB87F /* AppCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -175,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				2273AAB02B1E772A0023D79F /* PlayerConfigView.swift */,
+				FF59C8262B4854DF00BDB87F /* PlayerConfigRoute.swift */,
 			);
 			path = PlayerConfig;
 			sourceTree = "<group>";
@@ -247,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				2273AAA92B1D11E20023D79F /* HostJoinView.swift */,
+				FF59C8282B485B3E00BDB87F /* Host&JoinRoomRoute.swift */,
 				80A2F8162B1FF3B700936339 /* Components */,
 			);
 			path = "Host&JoinRoom";
@@ -258,6 +274,24 @@
 				80A2F8172B1FF3C400936339 /* RoomCardView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		FF59C81F2B48537200BDB87F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FF59C8202B48538800BDB87F /* Coordinator.swift */,
+				FF59C8222B48539800BDB87F /* FlowBuilder.swift */,
+				FF59C8242B4853D500BDB87F /* Route.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FF59C82A2B485D9000BDB87F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FF59C82C2B485DB900BDB87F /* KeysService.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,21 +372,27 @@
 				809724092B211DB30057932B /* WaitingRoomView.swift in Sources */,
 				80A2F8142B1FE43C00936339 /* GameViewModel.swift in Sources */,
 				2273AAAC2B1D14750023D79F /* PlayerModel.swift in Sources */,
+				FF59C8272B4854DF00BDB87F /* PlayerConfigRoute.swift in Sources */,
+				FF59C8292B485B3E00BDB87F /* Host&JoinRoomRoute.swift in Sources */,
 				2273AAA62B1BF44F0023D79F /* RoomModel.swift in Sources */,
 				8097240B2B2127F60057932B /* PlayerStatusModel.swift in Sources */,
 				809724112B2133A30057932B /* ButtonsSection.swift in Sources */,
+				FF59C8212B48538800BDB87F /* Coordinator.swift in Sources */,
+				FF59C81E2B4852D300BDB87F /* AppCoordinator.swift in Sources */,
 				8097240F2B2133160057932B /* WaitingRoomHeader.swift in Sources */,
+				FF59C82D2B485DB900BDB87F /* KeysService.swift in Sources */,
 				2273AAA82B1BF7100023D79F /* GenericMessage.swift in Sources */,
 				2273AAB12B1E772A0023D79F /* PlayerConfigView.swift in Sources */,
 				2273AA982B1BE2140023D79F /* ConnectionService.swift in Sources */,
-				2273AA8B2B1BE1A00023D79F /* ContentView.swift in Sources */,
 				80286D5D2B1EA06A00772A9C /* ImageManager.swift in Sources */,
 				8097240D2B2132980057932B /* PlayerCard.swift in Sources */,
+				FF59C8232B48539800BDB87F /* FlowBuilder.swift in Sources */,
 				80A2F8182B1FF3C400936339 /* RoomCardView.swift in Sources */,
 				2273AA892B1BE1A00023D79F /* MGGameApp.swift in Sources */,
 				80A2F8052B1FC4AC00936339 /* FontManager.swift in Sources */,
 				80286D602B1EA07A00772A9C /* ColorManager.swift in Sources */,
 				802169762B1EA55800BF9F5F /* SplashScreenView.swift in Sources */,
+				FF59C8252B4853D500BDB87F /* Route.swift in Sources */,
 				2273AAAA2B1D11E20023D79F /* HostJoinView.swift in Sources */,
 				2273AAA42B1BF33F0023D79F /* DecodeService.swift in Sources */,
 			);

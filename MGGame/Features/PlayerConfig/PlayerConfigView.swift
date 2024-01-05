@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct PlayerConfigView: View {
+    @StateObject var router: PlayerConfigRoute
     @AppStorage("userId") var userId = UUID().uuidString
-    @AppStorage("nickName") var nickName = ""
+    @AppStorage("username") var userName = ""
     
     @State var textValue = ""
     
@@ -40,7 +41,9 @@ struct PlayerConfigView: View {
             Spacer()
             
             Button {
-                nickName = textValue
+                KeysService.set(textValue, for: .username)
+                router.pushToConfigView(username: userName)
+                print(userName)
             } label: {
                 HStack() {
                     Spacer()
@@ -56,8 +59,4 @@ struct PlayerConfigView: View {
         .padding(.all)
         .background(ColorManager.Colors.white.value)
     }
-}
-
-#Preview {
-    PlayerConfigView()
 }

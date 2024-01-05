@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct HostJoinView: View {
-    @ObservedObject var gameViewModel: GameViewModel
-    
+    @StateObject var gameViewModel: GameViewModel = GameViewModel(userID: .init(), nickName: KeysService.get(.username) as! String)
+    @StateObject var router: HostJoinRoomRoute
     @State var isInRoom: Bool = false
+    
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -68,8 +69,4 @@ struct HostJoinView: View {
             WaitingRoomView(gameViewModel: gameViewModel)
         }
     }
-}
-
-#Preview {
-    HostJoinView(gameViewModel: GameViewModel(userID: .init(), nickName: "Maurrici"))
 }
