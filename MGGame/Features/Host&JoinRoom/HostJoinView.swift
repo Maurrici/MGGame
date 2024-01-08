@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HostJoinView: View {
-    @StateObject var gameViewModel: GameViewModel = GameViewModel(userID: .init(), nickName: KeysService.get(.username) as! String)
+    @StateObject var gameViewModel: GameViewModel = GameViewModel(userID: .init(), nickName: KeysService.getString(.username))
     @StateObject var router: HostJoinRoomRoute
     @State var isInRoom: Bool = false
     
@@ -50,7 +50,7 @@ struct HostJoinView: View {
             Divider()
             
             Button {
-                gameViewModel.createRoom(name: "Sala de teste 123")
+                gameViewModel.createRoom(name: "\(gameViewModel.player.nickName)")
             } label: {
                 HStack() {
                     Spacer()

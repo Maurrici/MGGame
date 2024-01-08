@@ -17,6 +17,11 @@ class KeysService {
         UserDefaults.standard.value(forKey: key.rawValue)
     }
     
+    static func getString(_ key: KeysService.Keys) -> String {
+        guard let value = UserDefaults.standard.value(forKey: key.rawValue) as? String else { return ""}
+        return value
+    }
+    
     static func set(_ value: Any?, for key: KeysService.Keys) {
         UserDefaults.standard.set(value, forKey: key.rawValue)
     }

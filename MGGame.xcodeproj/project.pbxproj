@@ -38,7 +38,7 @@
 		FF59C8232B48539800BDB87F /* FlowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C8222B48539800BDB87F /* FlowBuilder.swift */; };
 		FF59C8252B4853D500BDB87F /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C8242B4853D500BDB87F /* Route.swift */; };
 		FF59C8272B4854DF00BDB87F /* PlayerConfigRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C8262B4854DF00BDB87F /* PlayerConfigRoute.swift */; };
-		FF59C8292B485B3E00BDB87F /* Host&JoinRoomRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C8282B485B3E00BDB87F /* Host&JoinRoomRoute.swift */; };
+		FF59C8292B485B3E00BDB87F /* HostJoinRoomRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C8282B485B3E00BDB87F /* HostJoinRoomRoute.swift */; };
 		FF59C82D2B485DB900BDB87F /* KeysService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C82C2B485DB900BDB87F /* KeysService.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,7 +77,7 @@
 		FF59C8222B48539800BDB87F /* FlowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowBuilder.swift; sourceTree = "<group>"; };
 		FF59C8242B4853D500BDB87F /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		FF59C8262B4854DF00BDB87F /* PlayerConfigRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerConfigRoute.swift; sourceTree = "<group>"; };
-		FF59C8282B485B3E00BDB87F /* Host&JoinRoomRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Host&JoinRoomRoute.swift"; sourceTree = "<group>"; };
+		FF59C8282B485B3E00BDB87F /* HostJoinRoomRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostJoinRoomRoute.swift; sourceTree = "<group>"; };
 		FF59C82C2B485DB900BDB87F /* KeysService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,10 +177,10 @@
 		2273AA9F2B1BE33A0023D79F /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				809724062B211D950057932B /* WaitingRoom */,
+				80286D612B1EA22300772A9C /* SplashScreen */,
 				2273AAAF2B1E76AD0023D79F /* PlayerConfig */,
 				80A2F8152B1FE9F200936339 /* Host&JoinRoom */,
-				80286D612B1EA22300772A9C /* SplashScreen */,
+				809724062B211D950057932B /* WaitingRoom */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				2273AAA92B1D11E20023D79F /* HostJoinView.swift */,
-				FF59C8282B485B3E00BDB87F /* Host&JoinRoomRoute.swift */,
+				FF59C8282B485B3E00BDB87F /* HostJoinRoomRoute.swift */,
 				80A2F8162B1FF3B700936339 /* Components */,
 			);
 			path = "Host&JoinRoom";
@@ -373,7 +373,7 @@
 				80A2F8142B1FE43C00936339 /* GameViewModel.swift in Sources */,
 				2273AAAC2B1D14750023D79F /* PlayerModel.swift in Sources */,
 				FF59C8272B4854DF00BDB87F /* PlayerConfigRoute.swift in Sources */,
-				FF59C8292B485B3E00BDB87F /* Host&JoinRoomRoute.swift in Sources */,
+				FF59C8292B485B3E00BDB87F /* HostJoinRoomRoute.swift in Sources */,
 				2273AAA62B1BF44F0023D79F /* RoomModel.swift in Sources */,
 				8097240B2B2127F60057932B /* PlayerStatusModel.swift in Sources */,
 				809724112B2133A30057932B /* ButtonsSection.swift in Sources */,
