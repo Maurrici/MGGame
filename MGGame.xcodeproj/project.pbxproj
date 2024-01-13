@@ -40,6 +40,9 @@
 		FF59C8272B4854DF00BDB87F /* PlayerConfigRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C8262B4854DF00BDB87F /* PlayerConfigRoute.swift */; };
 		FF59C8292B485B3E00BDB87F /* HostJoinRoomRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C8282B485B3E00BDB87F /* HostJoinRoomRoute.swift */; };
 		FF59C82D2B485DB900BDB87F /* KeysService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C82C2B485DB900BDB87F /* KeysService.swift */; };
+		FF6FE2132B4CA0B600EB6AC8 /* WaitingRoomRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FE2122B4CA0B600EB6AC8 /* WaitingRoomRouter.swift */; };
+		FF6FE2152B4CA53200EB6AC8 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FE2142B4CA53200EB6AC8 /* GameScreen.swift */; };
+		FF6FE2172B4CA54400EB6AC8 /* GameScreenRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FE2162B4CA54400EB6AC8 /* GameScreenRoute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +82,9 @@
 		FF59C8262B4854DF00BDB87F /* PlayerConfigRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerConfigRoute.swift; sourceTree = "<group>"; };
 		FF59C8282B485B3E00BDB87F /* HostJoinRoomRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostJoinRoomRoute.swift; sourceTree = "<group>"; };
 		FF59C82C2B485DB900BDB87F /* KeysService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysService.swift; sourceTree = "<group>"; };
+		FF6FE2122B4CA0B600EB6AC8 /* WaitingRoomRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomRouter.swift; sourceTree = "<group>"; };
+		FF6FE2142B4CA53200EB6AC8 /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
+		FF6FE2162B4CA54400EB6AC8 /* GameScreenRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenRoute.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +187,7 @@
 				2273AAAF2B1E76AD0023D79F /* PlayerConfig */,
 				80A2F8152B1FE9F200936339 /* Host&JoinRoom */,
 				809724062B211D950057932B /* WaitingRoom */,
+				FF6FE2112B4C84DC00EB6AC8 /* GameScreen */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -222,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				809724082B211DB30057932B /* WaitingRoomView.swift */,
+				FF6FE2122B4CA0B600EB6AC8 /* WaitingRoomRouter.swift */,
 				809724072B211DA40057932B /* Components */,
 			);
 			path = WaitingRoom;
@@ -292,6 +300,15 @@
 				FF59C82C2B485DB900BDB87F /* KeysService.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FF6FE2112B4C84DC00EB6AC8 /* GameScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FF6FE2142B4CA53200EB6AC8 /* GameScreen.swift */,
+				FF6FE2162B4CA54400EB6AC8 /* GameScreenRoute.swift */,
+			);
+			path = GameScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +391,7 @@
 				2273AAAC2B1D14750023D79F /* PlayerModel.swift in Sources */,
 				FF59C8272B4854DF00BDB87F /* PlayerConfigRoute.swift in Sources */,
 				FF59C8292B485B3E00BDB87F /* HostJoinRoomRoute.swift in Sources */,
+				FF6FE2152B4CA53200EB6AC8 /* GameScreen.swift in Sources */,
 				2273AAA62B1BF44F0023D79F /* RoomModel.swift in Sources */,
 				8097240B2B2127F60057932B /* PlayerStatusModel.swift in Sources */,
 				809724112B2133A30057932B /* ButtonsSection.swift in Sources */,
@@ -381,6 +399,7 @@
 				FF59C81E2B4852D300BDB87F /* AppCoordinator.swift in Sources */,
 				8097240F2B2133160057932B /* WaitingRoomHeader.swift in Sources */,
 				FF59C82D2B485DB900BDB87F /* KeysService.swift in Sources */,
+				FF6FE2172B4CA54400EB6AC8 /* GameScreenRoute.swift in Sources */,
 				2273AAA82B1BF7100023D79F /* GenericMessage.swift in Sources */,
 				2273AAB12B1E772A0023D79F /* PlayerConfigView.swift in Sources */,
 				2273AA982B1BE2140023D79F /* ConnectionService.swift in Sources */,
@@ -393,6 +412,7 @@
 				80286D602B1EA07A00772A9C /* ColorManager.swift in Sources */,
 				802169762B1EA55800BF9F5F /* SplashScreenView.swift in Sources */,
 				FF59C8252B4853D500BDB87F /* Route.swift in Sources */,
+				FF6FE2132B4CA0B600EB6AC8 /* WaitingRoomRouter.swift in Sources */,
 				2273AAAA2B1D11E20023D79F /* HostJoinView.swift in Sources */,
 				2273AAA42B1BF33F0023D79F /* DecodeService.swift in Sources */,
 			);

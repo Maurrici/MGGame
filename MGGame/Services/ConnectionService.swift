@@ -111,7 +111,7 @@ extension GameConnection: MCSessionDelegate {
                 if let roomData = try? JSONSerialization.data(withJSONObject: message?.data as Any),
                    let room = try? JSONDecoder().decode(RoomModel.self, from: roomData) {
                     DispatchQueue.main.async {
-                        self.handler?.getPublicRooms(roomPublic: room)
+                        self.handler?.getPublicGameRooms(roomPublic: room)
                     }
                 }
             case .joinRoom:

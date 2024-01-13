@@ -22,6 +22,15 @@ class AppCoordinator: Coordinator {
     @ViewBuilder func build() -> some View {
         PlayerConfigRoute(coordinator: self)
             .build()
+            .navigationDestination(for: HostJoinRoomRoute.self) { router in
+                router.build()
+            }
+            .navigationDestination(for: WaitingRoomRoute.self) { router in
+                router.build()
+            }
+            .navigationDestination(for: GameScreenRoute.self) { router in
+                router.build()
+            }
     }
 }
 

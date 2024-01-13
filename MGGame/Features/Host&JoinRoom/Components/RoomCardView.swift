@@ -10,6 +10,12 @@ import SwiftUI
 struct RoomCardView: View {
     
     let room: RoomModel
+    let numberOfPlayers: Int
+    
+    init(room: RoomModel) {
+        self.room = room
+        self.numberOfPlayers = room.players?.count ?? 1
+    }
     
     var body: some View {
         HStack {
@@ -17,13 +23,10 @@ struct RoomCardView: View {
                 Text("\(room.name)")
                     .font(.nippoRegular(size: 18))
                     .foregroundColor(.black)
-                Text("locked with password")
-                    .font(.nippoRegular(size: 13))
-                    .foregroundColor(.black)
             }
             Spacer()
             
-            Text("3/7")
+            Text("\(numberOfPlayers)/8")
         }
         .padding()
         .background(ColorManager.Colors.pink.value)

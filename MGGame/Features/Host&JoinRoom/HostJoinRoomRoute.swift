@@ -25,6 +25,10 @@ final class HostJoinRoomRoute: Route {
         
     }
     
+    func pushToWaitingRoomView(viewModel: GameViewModel) {
+        coordinator.path.append(WaitingRoomRoute(coordinator: self.coordinator, gameViewModel: viewModel))
+    }
+    
     @ViewBuilder func build() -> some View {
         HostJoinView(router: self)
     }

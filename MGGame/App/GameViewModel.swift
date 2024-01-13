@@ -9,7 +9,7 @@ import Foundation
 
 class GameViewModel: ObservableObject {
     @Published var player: PlayerModel
-    @Published var rooms: [RoomModel] = []
+    @Published var availableRooms: [RoomModel] = []
     @Published var myRoom: RoomModel? {
         didSet {
             if myRoom != nil { isInRoom = true }
@@ -17,6 +17,7 @@ class GameViewModel: ObservableObject {
         }
     }
     @Published var isInRoom: Bool = false
+    @Published var gameHasStarted: Bool = false
     
     var session = GameConnection()
     
@@ -25,12 +26,28 @@ class GameViewModel: ObservableObject {
         self.session.handler = self
     }
     
-    func getPublicRooms(roomPublic: RoomModel) {
-        let isNewRoom = rooms.first { room in room.id == roomPublic.id }
+    func getPublicGameRooms(roomPublic: RoomModel) {
+        let isNewRoom = availableRooms.first { room in room.id == roomPublic.id }
         
         if isNewRoom == nil {
-            rooms.append(roomPublic)
+            availableRooms.append(roomPublic)
         }
+    }
+    
+    func initGame() -> Bool {
+        var startGame: Bool = false
+        
+        // if myRoom?.players?.count ?? 2 < 3 { return startGame }
+        for player in myRoom?.players ?? [] {
+            if !player.ready {
+                startGame = false
+            } else {
+                startGame = true
+            }
+        }
+        
+        if startGame { self.gameHasStarted = true } 
+        return startGame
     }
     
     func setPlayerStatus() {
@@ -81,14 +98,14 @@ class GameViewModel: ObservableObject {
         if roomQuitPlayer.roomId == myRoom?.id {
             if roomQuitPlayer.playerId == myRoom?.hostID {
                 myRoom = nil
-                self.rooms = rooms.filter({ room in room.id != roomQuitPlayer.roomId})
+                self.availableRooms = availableRooms.filter({ room in room.id != roomQuitPlayer.roomId})
                 return
             } else {
                 self.myRoom?.players = myRoom?.players?.filter({ player in player.id != roomQuitPlayer.playerId})
             }
         }
         
-        self.rooms = rooms.filter({ room in room.hostID != roomQuitPlayer.playerId})
+        self.availableRooms = availableRooms.filter({ room in room.hostID != roomQuitPlayer.playerId})
     }
     
     func offerRoom() {

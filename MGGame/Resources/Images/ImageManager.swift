@@ -11,6 +11,7 @@ import SwiftUI
 enum ImageManager {
     enum UserConfig: String {
         case UserConfigArt
+        case EmptyRoomsArt
         
         var render: Image {
             return Image(self.rawValue)

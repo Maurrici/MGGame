@@ -8,43 +8,62 @@
 import SwiftUI
 
 struct WaitingRoomView: View {
-    let gameViewModel: GameViewModel
+    @ObservedObject var gameViewModel: GameViewModel
+    @StateObject var router: WaitingRoomRoute
     @State var viewId: UUID = .init()
     
     var body: some View {
         VStack(alignment: .leading) {
-            WaitingRoomHeader(roomName: gameViewModel.myRoom?.name ?? "Sala sem nome")
+            WaitingRoomHeader(roomName: ("\(gameViewModel.myRoom?.name ?? "") Room"))
             
-            VStack(alignment: .leading, spacing: 20) {
-                ForEach(gameViewModel.myRoom?.players ?? []) { player in
-                    if player.id == gameViewModel.myRoom?.hostID {
-                        Text("HOST:")
-                            .font(.nippoRegular(size: 24))
-                            .foregroundColor(.white)
-                            .padding(.horizontal)
-                    } else {
-                        Text("Players:")
-                            .font(.nippoRegular(size: 24))
-                            .foregroundColor(.white)
-                            .padding(.horizontal)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 20) {
+                    Text("Players:")
+                        .font(.nippoRegular(size: 24))
+                        .foregroundColor(.white)
+                        .padding(.horizontal)
+                    ForEach(gameViewModel.myRoom?.players ?? []) { player in
+                        PlayerCard(player: player)
                     }
-                    PlayerCard(player: player)
-                    
                 }
+                .id(viewId)
+                
                 Spacer()
             }
-            .id(viewId)
             .padding(.vertical)
             .background(ColorManager.Colors.lightBlue.value)
             
             Divider()
             
             ButtonsSection(gameViewModel: gameViewModel)
-            .padding()
+                .padding()
+
+            if gameViewModel.myRoom?.hostID == gameViewModel.player.id {
+                Button {
+                    if gameViewModel.initGame() {
+                        router.pushToGameView()
+                    }
+                } label: {
+                    HStack {
+                        Spacer()
+                        Text("Start Game")
+                            .font(.nippoRegular(size: 32))
+                            .foregroundColor(.black)
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                    .background(ColorManager.Colors.pink.value)
+                }
+                Spacer()
+            }
         }
         .padding(.horizontal)
         .onChange(of: gameViewModel.myRoom?.updateRoom){
             viewId = .init()
+        }
+        .onChange(of: gameViewModel.gameHasStarted) {
+            print("Game comecou!")
+            router.pushToGameView()
         }
     }
 }
