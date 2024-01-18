@@ -35,7 +35,7 @@ struct WaitingRoomView: View {
             
             Divider()
             
-            ButtonsSection(gameViewModel: gameViewModel)
+            WaitingRoomButtons(gameViewModel: gameViewModel)
                 .padding()
 
             if gameViewModel.myRoom?.hostID == gameViewModel.player.id {
@@ -58,6 +58,7 @@ struct WaitingRoomView: View {
             }
         }
         .padding(.horizontal)
+        .background(ColorManager.Colors.white.value)
         .onChange(of: gameViewModel.myRoom?.updateRoom){
             viewId = .init()
         }

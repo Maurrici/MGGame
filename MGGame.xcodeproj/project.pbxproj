@@ -24,7 +24,7 @@
 		8097240B2B2127F60057932B /* PlayerStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097240A2B2127F60057932B /* PlayerStatusModel.swift */; };
 		8097240D2B2132980057932B /* PlayerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097240C2B2132980057932B /* PlayerCard.swift */; };
 		8097240F2B2133160057932B /* WaitingRoomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097240E2B2133160057932B /* WaitingRoomHeader.swift */; };
-		809724112B2133A30057932B /* ButtonsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809724102B2133A30057932B /* ButtonsSection.swift */; };
+		809724112B2133A30057932B /* waitingRoomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809724102B2133A30057932B /* waitingRoomButtons.swift */; };
 		80A2F8052B1FC4AC00936339 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2F8042B1FC4AC00936339 /* FontManager.swift */; };
 		80A2F8082B1FC56900936339 /* Nippo-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80A2F8072B1FC56900936339 /* Nippo-Bold.otf */; };
 		80A2F80D2B1FC8B900936339 /* Nippo-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80A2F8092B1FC57400936339 /* Nippo-Medium.otf */; };
@@ -40,6 +40,7 @@
 		FF59C8272B4854DF00BDB87F /* PlayerConfigRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C8262B4854DF00BDB87F /* PlayerConfigRoute.swift */; };
 		FF59C8292B485B3E00BDB87F /* HostJoinRoomRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C8282B485B3E00BDB87F /* HostJoinRoomRoute.swift */; };
 		FF59C82D2B485DB900BDB87F /* KeysService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF59C82C2B485DB900BDB87F /* KeysService.swift */; };
+		FF609E522B59B374009A6A8D /* GameScreenButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF609E512B59B374009A6A8D /* GameScreenButtons.swift */; };
 		FF6FE2132B4CA0B600EB6AC8 /* WaitingRoomRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FE2122B4CA0B600EB6AC8 /* WaitingRoomRouter.swift */; };
 		FF6FE2152B4CA53200EB6AC8 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FE2142B4CA53200EB6AC8 /* GameScreen.swift */; };
 		FF6FE2172B4CA54400EB6AC8 /* GameScreenRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FE2162B4CA54400EB6AC8 /* GameScreenRoute.swift */; };
@@ -66,7 +67,7 @@
 		8097240A2B2127F60057932B /* PlayerStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatusModel.swift; sourceTree = "<group>"; };
 		8097240C2B2132980057932B /* PlayerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCard.swift; sourceTree = "<group>"; };
 		8097240E2B2133160057932B /* WaitingRoomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomHeader.swift; sourceTree = "<group>"; };
-		809724102B2133A30057932B /* ButtonsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsSection.swift; sourceTree = "<group>"; };
+		809724102B2133A30057932B /* waitingRoomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waitingRoomButtons.swift; sourceTree = "<group>"; };
 		80A2F8042B1FC4AC00936339 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		80A2F8072B1FC56900936339 /* Nippo-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nippo-Bold.otf"; sourceTree = "<group>"; };
 		80A2F8092B1FC57400936339 /* Nippo-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nippo-Medium.otf"; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		FF59C8262B4854DF00BDB87F /* PlayerConfigRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerConfigRoute.swift; sourceTree = "<group>"; };
 		FF59C8282B485B3E00BDB87F /* HostJoinRoomRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostJoinRoomRoute.swift; sourceTree = "<group>"; };
 		FF59C82C2B485DB900BDB87F /* KeysService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysService.swift; sourceTree = "<group>"; };
+		FF609E512B59B374009A6A8D /* GameScreenButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenButtons.swift; sourceTree = "<group>"; };
 		FF6FE2122B4CA0B600EB6AC8 /* WaitingRoomRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomRouter.swift; sourceTree = "<group>"; };
 		FF6FE2142B4CA53200EB6AC8 /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
 		FF6FE2162B4CA54400EB6AC8 /* GameScreenRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenRoute.swift; sourceTree = "<group>"; };
@@ -240,7 +242,7 @@
 			children = (
 				8097240C2B2132980057932B /* PlayerCard.swift */,
 				8097240E2B2133160057932B /* WaitingRoomHeader.swift */,
-				809724102B2133A30057932B /* ButtonsSection.swift */,
+				809724102B2133A30057932B /* waitingRoomButtons.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -302,11 +304,20 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		FF609E502B59B2F4009A6A8D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FF609E512B59B374009A6A8D /* GameScreenButtons.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		FF6FE2112B4C84DC00EB6AC8 /* GameScreen */ = {
 			isa = PBXGroup;
 			children = (
 				FF6FE2142B4CA53200EB6AC8 /* GameScreen.swift */,
 				FF6FE2162B4CA54400EB6AC8 /* GameScreenRoute.swift */,
+				FF609E502B59B2F4009A6A8D /* Components */,
 			);
 			path = GameScreen;
 			sourceTree = "<group>";
@@ -387,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				809724092B211DB30057932B /* WaitingRoomView.swift in Sources */,
+				FF609E522B59B374009A6A8D /* GameScreenButtons.swift in Sources */,
 				80A2F8142B1FE43C00936339 /* GameViewModel.swift in Sources */,
 				2273AAAC2B1D14750023D79F /* PlayerModel.swift in Sources */,
 				FF59C8272B4854DF00BDB87F /* PlayerConfigRoute.swift in Sources */,
@@ -394,7 +406,7 @@
 				FF6FE2152B4CA53200EB6AC8 /* GameScreen.swift in Sources */,
 				2273AAA62B1BF44F0023D79F /* RoomModel.swift in Sources */,
 				8097240B2B2127F60057932B /* PlayerStatusModel.swift in Sources */,
-				809724112B2133A30057932B /* ButtonsSection.swift in Sources */,
+				809724112B2133A30057932B /* waitingRoomButtons.swift in Sources */,
 				FF59C8212B48538800BDB87F /* Coordinator.swift in Sources */,
 				FF59C81E2B4852D300BDB87F /* AppCoordinator.swift in Sources */,
 				8097240F2B2133160057932B /* WaitingRoomHeader.swift in Sources */,

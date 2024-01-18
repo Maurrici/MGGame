@@ -12,6 +12,7 @@ class GameViewModel: ObservableObject {
     @Published var availableRooms: [RoomModel] = []
     @Published var myRoom: RoomModel?
     @Published var gameHasStarted: Bool = false
+    @Published var selectedWord: String = "Waiting for the storyteller..."
     
     var session = GameConnection()
     

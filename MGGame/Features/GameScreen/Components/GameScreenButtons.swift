@@ -1,44 +1,45 @@
 //
-//  ButtonsSection.swift
+//  GameScreenButtons.swift
 //  MGGame
 //
-//  Created by Gustavo Holzmann on 06/12/23.
+//  Created by Gustavo Holzmann on 18/01/24.
 //
 
 import SwiftUI
 
-struct ButtonsSection: View {
-    let gameViewModel: GameViewModel
+struct GameScreenButtons: View {
+    let router: GameScreenRoute
+    let viewModel: GameViewModel
     
     var body: some View {
         HStack {
             Button {
-                gameViewModel.quitRoom()
+                router.pop()
             } label: {
-                HStack() {
+                HStack {
                     Spacer()
                     Text("Exit")
                         .font(.nippoRegular(size: 32))
                         .foregroundColor(.black)
+                        .background(ColorManager.Colors.pink.value)
                     Spacer()
                 }
                 .padding(.horizontal)
-                .background(ColorManager.Colors.pink.value)
             }
-            
             Button {
-                gameViewModel.setPlayerStatus()
+                print("Confirmado meu patrao!")
             } label: {
-                HStack() {
+                HStack {
                     Spacer()
-                    Text("Ready")
+                    Text("Confirm")
                         .font(.nippoRegular(size: 32))
                         .foregroundColor(.black)
+                        .background(ColorManager.Colors.pink.value)
                     Spacer()
                 }
                 .padding(.horizontal)
-                .background(ColorManager.Colors.pink.value)
             }
         }
+        .padding()
     }
 }
