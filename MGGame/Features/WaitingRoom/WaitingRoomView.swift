@@ -63,6 +63,8 @@ struct WaitingRoomView: View {
         }
         .onChange(of: gameViewModel.gameHasStarted) {
             print("Game comecou!")
+            guard let myRoom = gameViewModel.myRoom else { return }
+            gameViewModel.setStoryteller(numberOfPlayers: myRoom.players.count)
             router.pushToGameView()
         }
     }

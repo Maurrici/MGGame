@@ -10,8 +10,6 @@ import SwiftUI
 struct HostJoinView: View {
     @StateObject var gameViewModel: GameViewModel = GameViewModel(userID: .init(), nickName: KeysService.getString(.username))
     @StateObject var router: HostJoinRoomRoute
-    @State var isInRoom: Bool = false
-    
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -48,7 +46,7 @@ struct HostJoinView: View {
                                 ForEach(gameViewModel.availableRooms) { room in
                                     RoomCardView(room: room)
                                         .onTapGesture {
-                                            gameViewModel.joinRoom(room: room)
+                                            gameViewModel.joinRoom(newRoom: room)
                                             router.pushToWaitingRoomView(viewModel: gameViewModel)
                                         }
                                 }

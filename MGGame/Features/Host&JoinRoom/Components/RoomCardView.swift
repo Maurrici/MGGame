@@ -14,7 +14,7 @@ struct RoomCardView: View {
     
     init(room: RoomModel) {
         self.room = room
-        self.numberOfPlayers = room.players?.count ?? 1
+        self.numberOfPlayers = room.players.count
     }
     
     var body: some View {

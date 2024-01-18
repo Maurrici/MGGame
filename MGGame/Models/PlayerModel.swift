@@ -11,4 +11,5 @@ struct PlayerModel: Codable, Identifiable {
     var id: UUID
     var nickName: String
     var ready: Bool = false
+    var isStoryteller: Bool = false
 }
