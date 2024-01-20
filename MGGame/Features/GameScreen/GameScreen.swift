@@ -11,6 +11,7 @@ struct GameScreenView: View {
     
     @StateObject var router: GameScreenRoute
     @ObservedObject var viewModel: GameViewModel
+    @State private var selectedImage: Image = ImageManager.UserConfig.EmptyRoomsArt.render
     
     var body: some View {
         VStack {
@@ -20,7 +21,7 @@ struct GameScreenView: View {
                         .font(.nippoRegular(size: 24))
                         .foregroundColor(.black)
                     VStack {
-                        ImageManager.UserConfig.EmptyRoomsArt.render
+                        selectedImage
                             .resizable()
                             .frame(width: 256, height: 256)
                         Text(viewModel.player.isStoryteller ? "Select your super word!" : "For the word: \(viewModel.selectedWord)")
@@ -41,24 +42,54 @@ struct GameScreenView: View {
                             .foregroundColor(.black)
                             .padding(.leading)
                         HStack {
-                            ImageManager.GameImages.EmptyRoomsArt.render
-                                .resizable()
-                                .frame(width: 64, height: 64)
-                            ImageManager.GameImages.EmptyRoomsArt.render
-                                .resizable()
-                                .frame(width: 64, height: 64)
-                            ImageManager.GameImages.EmptyRoomsArt.render
-                                .resizable()
-                                .frame(width: 64, height: 64)
-                            ImageManager.GameImages.EmptyRoomsArt.render
-                                .resizable()
-                                .frame(width: 64, height: 64)
-                            ImageManager.GameImages.EmptyRoomsArt.render
-                                .resizable()
-                                .frame(width: 64, height: 64)
-                            ImageManager.GameImages.EmptyRoomsArt.render
-                                .resizable()
-                                .frame(width: 64, height: 64)
+                            Button {
+                                selectedImage = ImageManager.GameIllustrations.ilustra_cat.render
+                            } label: {
+                                ImageManager.GameIllustrations.ilustra_cat.render
+                                    .resizable()
+                                    .frame(width: 64, height: 64)
+                            }
+                            Button {
+                                selectedImage = ImageManager.GameIllustrations.ilustra_dark.render
+                            } label: {
+                                ImageManager.GameIllustrations.ilustra_dark.render
+                                    .resizable()
+                                    .frame(width: 64, height: 64)
+                            }
+                            Button {
+                                selectedImage = ImageManager.GameIllustrations.ilustra_room.render
+                            } label: {
+                                ImageManager.GameIllustrations.ilustra_room.render
+                                    .resizable()
+                                    .frame(width: 64, height: 64)
+                            }
+                            Button {
+                                selectedImage = ImageManager.GameIllustrations.ilustra_house.render
+                            } label: {
+                                ImageManager.GameIllustrations.ilustra_house.render
+                                    .resizable()
+                                    .frame(width: 64, height: 64)
+                            }
+                            Button {
+                                selectedImage = ImageManager.GameIllustrations.ilustra_train.render
+                            } label: {
+                                ImageManager.GameIllustrations.ilustra_train.render                                    .resizable()
+                                    .frame(width: 64, height: 64)
+                            }
+                            Button {
+                                selectedImage = ImageManager.GameIllustrations.ilustra_hollow.render
+                            } label: {
+                                ImageManager.GameIllustrations.ilustra_hollow.render
+                                    .resizable()
+                                    .frame(width: 64, height: 64)
+                            }
+                            Button {
+                                selectedImage = ImageManager.GameIllustrations.ilustra_memory.render
+                            } label: {
+                                ImageManager.GameIllustrations.ilustra_memory.render
+                                    .resizable()
+                                    .frame(width: 64, height: 64)
+                            }
                         }
                         .padding()
                     }
