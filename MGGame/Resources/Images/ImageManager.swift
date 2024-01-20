@@ -26,4 +26,18 @@ enum ImageManager {
             return Image(self.rawValue)
         }
     }
+    
+    enum gameIllustrations: String {
+        case ilustra_cat
+        case ilustra_dark
+        case ilustra_room
+        case ilustra_train
+        case ilustra_memory
+        case ilustra_house
+        case ilustra_hollow
+        
+        var render: Image {
+            return Image(self.rawValue)
+        }
+    }
 }
